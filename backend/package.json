@@ -2,7 +2,9 @@
   "type" : "module",
   "scripts": {
     "dev" :"nodemon index.js",
-    "seed": "node seedEmployee.js"
+    "seed": "node seedEmployee.js",
+    "start": "node index.js",
+    "seed:data": "node seedEmployee.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
