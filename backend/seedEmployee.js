@@ -1,7 +1,12 @@
-import mongoose from "mongoose";
+
 import bcrypt from "bcrypt";
 import { configDotenv } from "dotenv";
 import User from "./models/User.model.js";
+// seedData.js
+import mongoose from "mongoose";
+import Station from "./models/station.model.js";
+import Train from "./models/Train.model.js";
+import Schedule from "./models/Schedule.model.js";
 
 configDotenv();
 
