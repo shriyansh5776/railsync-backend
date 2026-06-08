@@ -171,6 +171,40 @@ async function deleteSchedule(req, res) {
     });
   }
 }
+async function getAllSchedules(req, res) {
+  try {
+    const { date } = req.query;
+
+    let query = {};
+
+    if (date) {
+      const startDate = new Date(date);
+      const endDate = new Date(date);
+
+      endDate.setDate(endDate.getDate() + 1);
+
+      query.departureTime = {
+        $gte: startDate,
+        $lt: endDate,
+      };
+    }
+
+    const schedules = await Schedule.find(query)
+      .populate("trainId")
+      .populate("sourceStation")
+      .populate("destinationStation");
+
+    return res.status(200).json({
+      success: true,
+      schedules,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+}
 
 
-export {deleteSchedule,updateSchedule,getScheduleById,getScheduleByTrainId,createSchedule}
+export {deleteSchedule,updateSchedule,getScheduleById,getScheduleByTrainId,createSchedule,getAllSchedules}
