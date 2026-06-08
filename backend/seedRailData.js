@@ -3,7 +3,7 @@ import fs from "fs";
 import { configDotenv } from "dotenv";
 
 import Train from "./models/Train.model.js";
-import Station from "./models/station.model.js";
+import Station from "./models/Station.model.js";
 
 configDotenv();
 

@@ -1,3 +1,6 @@
 .env
 node_modules
 dist
+backend/data/schedules.json
+backend/data/stations.json
+backend/data/trains.json
