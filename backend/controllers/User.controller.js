@@ -42,14 +42,14 @@ async function CreateUser(req, res) {
 
 async function userLogin(req, res) {
   try {
-    const { username, password } = req.body;
-    if (!username || !password) {
+    const { email, password } = req.body;
+    if (!email || !password) {
       return res.status(400).json({
         success: false,
         message: "enter all credentials",
       });
     }
-    const doesUserExists = await User.findOne({ username });
+    const doesUserExists = await User.findOne({ email });
     if (!doesUserExists) {
       return res.status(404).json({
         success: false,
