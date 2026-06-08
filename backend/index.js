@@ -11,7 +11,6 @@ import scheduleRouter from "./routes/schedule_routes/Schedule.routes.js";
 import cors from "cors";
 const app = express();
 app.use(cors());
-app.use(express.json());
 configDotenv();
 const PORT = process.env.PORT || 5000;
 const router = Router()
