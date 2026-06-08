@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Station from "../models/Station.model.js";
+import Station from "../models/station.model.js";
 import Train from "../models/Train.model.js";
 import Schedule from "../models/Schedule.model.js";
 
