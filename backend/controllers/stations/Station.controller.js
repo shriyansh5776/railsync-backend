@@ -1,4 +1,4 @@
-import Station from "../../models/station.model.js";
+import Station from "../../models/Station.model.js";
 
 async function getStation(req, res) {
   try {
